@@ -64,12 +64,15 @@ function mostUsedHeroes(matches, heroes) {
  * @returns {number} wins.dire
  */
 function winRate(matches) {
-  let direWins;
-  let radiantWins;
+  let direWins = 0;
+  let radiantWins = 0;
 
-  radiantWins = matches.reduce((s, m) => (s += m.radiantWin | 0), 0);
-  radiantWins = (radiantWins / matches.length) * 100;
-  direWins = 100 - radiantWins;
+  if (matches.length) {
+
+    radiantWins = matches.reduce((s, m) => (s += m.radiantWin | 0), 0);
+    radiantWins = (radiantWins / matches.length) * 100;
+    direWins = 100 - radiantWins;
+  }
 
   return {
     radiant: radiantWins,
