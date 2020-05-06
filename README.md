@@ -1,10 +1,11 @@
 # Bota
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fsecato%2Fbota%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/secato/bota/goto?ref=master)
 
 **`Bota`** is a bot that automatically tweets latest Dota matches statistics.
 
 You can check the twitter profile [@LittleBota](https://twitter.com/LittleBota)
 
-This was developed for CS50 course final project and the main goal was to explore the complete process from development to continuous deployment.
+This bot was developed for CS50 course final project and the main goal was to make a small, but functional code exploring all the development life cycle from tests to continuous deployment.
 
 ## Stack
 
@@ -21,10 +22,10 @@ The process in short is:
 
 - Once a day AWS triggers this lambda function
 - The function collects the latest `MAX_MATCHES` using Dota 2 Web API
-- Then it calculates several metrics
-- After that tweets the results in the official tweet account
+- After that it calculates several metrics
+- Then it tweets the results in the official tweet account
 
-The deployment is handled with Github actions and only occurs if the test runs successful.
+The deployment is handled by Github actions and only occurs if the tests runs successful.
 
 ## Running locally
 
