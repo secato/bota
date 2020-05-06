@@ -68,7 +68,6 @@ function winRate(matches) {
   let radiantWins = 0;
 
   if (matches.length) {
-
     radiantWins = matches.reduce((s, m) => (s += m.radiantWin | 0), 0);
     radiantWins = (radiantWins / matches.length) * 100;
     direWins = 100 - radiantWins;
@@ -89,7 +88,8 @@ function averageMatchDuration(matches) {
   return matches.reduce((s, m) => (s += m.duration), 0) / matches.length;
 }
 
-async function fillMatches(sequence, max) {
+async function fillMatches(sequence) {
+  const max = process.env.MAX_MATCHES;
   let matches = [];
   while (matches.length < max) {
     let partialMatches = await getMatches(sequence);
